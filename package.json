@@ -1,0 +1,32 @@
+{
+  "name": "ager",
+  "version": "1.0.0",
+  "description": "Age calculations",
+  "author": {
+    "name": "Andrey Polischuk",
+    "email": "<andre.polischuk@gmail.com>"
+  },
+  "homepage": "https://github.com/andrepolischuk/ager",
+  "keywords": [
+    "date",
+    "age"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andrepolischuk/ager.git"
+  },
+  "bugs": {
+    "url": "https://github.com/andrepolischuk/ager/issues"
+  },
+  "licenses": [{
+    "type": "MIT",
+    "url": "http://github.com/andrepolischuk/ager/blob/master/LICENSE"
+  }],
+  "main": "ager.js",
+  "engines": {
+
+  },
+  "dependencies": {
+
+  }
+}
