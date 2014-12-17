@@ -23,6 +23,10 @@
       return;
     }
 
+    if (typeof +year === 'number') {
+      birthday.setFullYear(+year);
+    }
+
     day = +day || birthday.getDate();
 
     var today = new Date();
