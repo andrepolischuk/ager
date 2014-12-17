@@ -7,7 +7,7 @@
   In browser:
 
 ```html
-<script src="//cdn.rawgit.com/andrepolischuk/ager/1.0.0/ager.min.js"></script>
+<script src="//cdn.rawgit.com/andrepolischuk/ager/1.0.1/ager.min.js"></script>
 ```
 
   In node.js
@@ -36,5 +36,5 @@ ager(new Date());
   Calculate age via date parameters
 
 ```js
-age(1991, 7, 24)
+ager(1991, 7, 24)
 ```
