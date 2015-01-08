@@ -1,0 +1,15 @@
+{
+  "name": "ager",
+  "description": "Age calculations",
+  "version": "1.0.1",
+  "keywords": [
+    "date",
+    "age"
+  ],
+  "repository": "andrepolischuk/ager",
+  "main" : "ager.js",
+  "scripts" : [
+    "ager.js"
+  ],
+  "license": "MIT"
+}
