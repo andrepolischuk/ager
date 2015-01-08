@@ -4,16 +4,22 @@
 
 ## Instalation
 
-  In browser:
+  Browser:
 
 ```html
-<script src="//cdn.rawgit.com/andrepolischuk/ager/1.0.1/ager.min.js"></script>
+<script src="https://cdn.rawgit.com/andrepolischuk/ager/1.0.1/ager.min.js"></script>
 ```
 
-  In node.js
+  Component(1):
 
 ```sh
-npm install ager
+$ component install andrepolischuk/ager
+```
+
+  Npm:
+
+```sh
+$ npm install ager
 ```
 
 ```js
