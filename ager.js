@@ -1,5 +1,5 @@
-// Ager © 2014 Andrey Polischuk
-// https://github.com/andrepolischuk/ager
+// Ager © 2014-2015 Andrey Polischuk
+// github.com/andrepolischuk/ager
 
 !function() {
 
