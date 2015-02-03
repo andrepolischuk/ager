@@ -34,7 +34,7 @@
     var monthDaysLength = new Date(birthday.getFullYear(),
       birthday.getMonth() + 1, 0).getDate();
 
-    if (monthDaysLength < day) {
+    if (monthDaysLength < day || today < birthday) {
       return;
     }
 
