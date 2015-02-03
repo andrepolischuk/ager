@@ -51,19 +51,11 @@
    */
 
   if (typeof define === 'function' && define.amd) {
-
-    define([], function() {
-      return ager;
-    });
-
+    define([], function() { return ager; });
   } else if (typeof module !== 'undefined' && module.exports) {
-
     module.exports = ager;
-
   } else {
-
     this.ager = ager;
-
   }
 
 }.call(this);
