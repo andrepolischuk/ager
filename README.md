@@ -7,7 +7,7 @@
   Browser:
 
 ```html
-<script src="https://cdn.rawgit.com/andrepolischuk/ager/1.1.0/ager.min.js"></script>
+<script src="https://cdn.rawgit.com/andrepolischuk/ager/1.1.1/ager.min.js"></script>
 ```
 
   Component(1):
@@ -21,11 +21,6 @@ $ component install andrepolischuk/ager
 ```sh
 $ npm install ager
 ```
-
-```js
-var ager = require('ager');
-```
-
 
 ## API
 
