@@ -19,12 +19,12 @@ describe('ager', function() {
     should(ager(1976, 13, 21)).be.type('undefined');
   });
 
-  it('should return number', function() {
+  it('should return number for 1980.8.11', function() {
     ager(1980, 8, 11).should.be.a.Number.and.not.be.NaN;
     ager(new Date(1980, 7, 11)).should.be.a.Number.and.not.be.NaN;
   });
 
-  it('should return 31', function() {
+  it('should return 31 for 1984.1.5', function() {
     ager(1984, 1, 5).should.equal(31);
     ager(new Date(1984, 0, 5)).should.equal(31);
   });
