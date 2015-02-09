@@ -23,7 +23,7 @@
       return;
     }
 
-    if (typeof +year === 'number') {
+    if (month) {
       birthday.setFullYear(+year);
     }
 
