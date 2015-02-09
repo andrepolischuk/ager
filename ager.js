@@ -15,7 +15,7 @@
 
   function ager(year, month, day) {
 
-    var birthday = typeof year.getMonth === 'function' ?
+    var birthday = year && typeof year.getMonth === 'function' ?
       birthday = year : (month && day) ?
       new Date(+year, +month - 1, +day) : undefined;
 
