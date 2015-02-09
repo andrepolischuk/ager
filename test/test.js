@@ -20,8 +20,8 @@ describe('ager', function() {
   });
 
   it('should return number', function() {
-    ager(1980, 8, 11).should.be.a.Number;
-    ager(new Date(1980, 7, 11)).should.be.a.Number;
+    ager(1980, 8, 11).should.be.a.Number.and.not.be.NaN;
+    ager(new Date(1980, 7, 11)).should.be.a.Number.and.not.be.NaN;
   });
 
   it('should return 31', function() {
