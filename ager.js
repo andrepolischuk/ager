@@ -19,7 +19,7 @@
       birthday = year : (month && day) ?
       new Date(+year, +month - 1, +day) : undefined;
 
-    if (!birthday) {
+    if (!birthday || +month > 12) {
       return;
     }
 
