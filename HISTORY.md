@@ -1,3 +1,10 @@
+# 1.1.2 / 2015.02.10
+
+  * Fix incorrect date
+  * Fix NaN value for new Data() argument
+  * Fix incorrect month
+  * Add mocha test
+
 # 1.1.1 / 2015.02.04
 
   * Fix future dates

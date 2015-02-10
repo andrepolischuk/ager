@@ -7,7 +7,7 @@
   Browser:
 
 ```html
-<script src="https://cdn.rawgit.com/andrepolischuk/ager/1.1.1/ager.min.js"></script>
+<script src="https://cdn.rawgit.com/andrepolischuk/ager/1.1.2/ager.min.js"></script>
 ```
 
   Component(1):
