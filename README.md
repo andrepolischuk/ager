@@ -7,7 +7,7 @@
   Browser:
 
 ```html
-<script src="https://cdn.rawgit.com/andrepolischuk/ager/1.1.2/ager.min.js"></script>
+<script src="https://cdn.rawgit.com/andrepolischuk/ager/1.1.3/dist/ager.min.js"></script>
 ```
 
   Component(1):
@@ -39,3 +39,7 @@ ager(new Date());
 ```js
 ager(1991, 7, 24)
 ```
+
+## License
+
+  MIT

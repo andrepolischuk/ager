@@ -1,3 +1,7 @@
+# 1.1.3 / 2015.02.12
+
+  * Rename and remove incapsulation
+
 # 1.1.2 / 2015.02.10
 
   * Fix incorrect date
