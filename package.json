@@ -17,7 +17,7 @@
   "scripts": {
     "test": "mocha test/test.js"
   },
-  "main": "ager.js",
+  "main": "index.js",
   "author": "Andrey Polischuk <andre.polischuk@gmail.com>",
   "license": "MIT"
 }

@@ -7,9 +7,9 @@
     "age"
   ],
   "repository": "andrepolischuk/ager",
-  "main" : "ager.js",
+  "main" : "index.js",
   "scripts" : [
-    "ager.js"
+    "index.js"
   ],
   "license": "MIT"
 }
