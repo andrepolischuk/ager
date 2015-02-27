@@ -7,7 +7,7 @@
   Browser:
 
 ```html
-<script src="https://cdn.rawgit.com/andrepolischuk/ager/1.1.3/dist/ager.min.js"></script>
+<script src="https://cdn.rawgit.com/andrepolischuk/ager/1.2.0/ager.min.js"></script>
 ```
 
   Component(1):
@@ -26,7 +26,7 @@ $ npm install ager
 
 ### ager(date)
 
-  Calculate age via Date object
+  Calculate age via date
 
 ```js
 ager(new Date());
@@ -34,10 +34,18 @@ ager(new Date());
 
 ### ager(year, month, day)
 
-  Calculate age via date parameters
+  Calculate age via arguments
 
 ```js
 ager(1991, 7, 24)
+```
+
+### ager(array)
+
+  Calculate age via array
+
+```js
+ager([1991, 7, 24])
 ```
 
 ## License

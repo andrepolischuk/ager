@@ -1,3 +1,7 @@
+# 1.2.0 / 2015.02.27
+
+  * Add array as date support
+
 # 1.1.3 / 2015.02.12
 
   * Rename and remove incapsulation
