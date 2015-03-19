@@ -5,8 +5,6 @@
  * Module dependencies
  */
 
-var dts = require('dts');
-
 try {
   var type = require('type');
 } catch (err) {
@@ -17,7 +15,7 @@ try {
  * Today
  */
 
-var today = dts();
+var today = new Date();
 
 /**
  * Expose age
@@ -29,13 +27,21 @@ var today = dts();
  */
 
 module.exports = function(year, month, day) {
+  var birthday;
 
-  var birthday = type(year) === 'date' ?
-    year : dts(year, month, day);
-
-  if (!birthday || birthday > today) {
-    return;
+  switch (type(year)) {
+    case 'date':
+      birthday = year;
+      break;
+    case 'array':
+      birthday = parse.apply(null, year);
+      break;
+    case 'number':
+      birthday = parse(year, month, day);
+      break;
   }
+
+  if (!birthday || birthday > today) return;
 
   var age = today.getFullYear() - birthday.getFullYear();
   age -= today.getMonth() < birthday.getMonth() ? 1 : 0;
@@ -44,3 +50,21 @@ module.exports = function(year, month, day) {
   return age;
 
 };
+
+/**
+ * Parse date
+ * @param  {Number} year
+ * @param  {Number} month
+ * @param  {Number} day
+ * @return {Date}
+ * @api private
+ */
+
+function parse(year, month, day) {
+  if (!month || month > 12) return;
+  if (!day || day > new Date(year, month, 0).getDate()) return;
+
+  var date = new Date(year, month - 1, day);
+  date.setFullYear(year);
+  return date;
+}

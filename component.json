@@ -8,7 +8,6 @@
   ],
   "repository": "andrepolischuk/ager",
   "dependencies": {
-    "andrepolischuk/dts": "^0.1.0",
     "component/type": "^1.1.0"
   },
   "main" : "index.js",
