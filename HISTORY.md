@@ -1,3 +1,7 @@
+# 1.2.1 / 2015.03.19
+
+  * Remove dts dependence
+
 # 1.2.0 / 2015.02.27
 
   * Add array as date support

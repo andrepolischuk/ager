@@ -98,8 +98,6 @@
  * Module dependencies
  */
 
-var dts = require('dts');
-
 try {
   var type = require('type');
 } catch (err) {
@@ -110,7 +108,7 @@ try {
  * Today
  */
 
-var today = dts();
+var today = new Date();
 
 /**
  * Expose age
@@ -122,13 +120,21 @@ var today = dts();
  */
 
 module.exports = function(year, month, day) {
+  var birthday;
 
-  var birthday = type(year) === 'date' ?
-    year : dts(year, month, day);
-
-  if (!birthday || birthday > today) {
-    return;
+  switch (type(year)) {
+    case 'date':
+      birthday = year;
+      break;
+    case 'array':
+      birthday = parse.apply(null, year);
+      break;
+    case 'number':
+      birthday = parse(year, month, day);
+      break;
   }
+
+  if (!birthday || birthday > today) return;
 
   var age = today.getFullYear() - birthday.getFullYear();
   age -= today.getMonth() < birthday.getMonth() ? 1 : 0;
@@ -137,58 +143,6 @@ module.exports = function(year, month, day) {
   return age;
 
 };
-
-}, {"dts":2,"type":3,"component-type":3}],
-2: [function(require, module, exports) {
-
-'use strict';
-
-/**
- * Module dependencies
- */
-
-try {
-  var type = require('type');
-} catch (err) {
-  var type = require('component-type');
-}
-
-/**
- * Expose new Date()
- * @param  {Array|Number|String} year
- * @param  {Number} month
- * @param  {Number} day
- * @return {Date}
- * @api public
- */
-
-module.exports = function(year, month, day) {
-  switch (type(year)) {
-    case 'string':
-      return parseString(year);
-    case 'array':
-      return parse(year[0], year[1], year[2]);
-    case 'number':
-      return parse(year, month, day);
-    case 'undefined':
-      return new Date();
-  }
-}
-
-/**
- * Parse string
- * @param  {String} string
- * @return {Date}
- * @api private
- */
-
-function parseString(string) {
-  var delimiter = string.match(/\d+(.).+/);
-  if (delimiter) {
-    string = string.split(delimiter[1]);
-    return parse(+string[0], +string[1], +string[2]);
-  }
-}
 
 /**
  * Parse date
@@ -200,15 +154,16 @@ function parseString(string) {
  */
 
 function parse(year, month, day) {
-  if (month <= 12 && day <= new Date(year, month, 0).getDate()) {
-    var date = new Date(year, month - 1, day);
-    date.setFullYear(year);
-    return date;
-  }
+  if (!month || month > 12) return;
+  if (!day || day > new Date(year, month, 0).getDate()) return;
+
+  var date = new Date(year, month - 1, day);
+  date.setFullYear(year);
+  return date;
 }
 
-}, {"type":3,"component-type":3}],
-3: [function(require, module, exports) {
+}, {"type":2,"component-type":2}],
+2: [function(require, module, exports) {
 /**
  * toString ref.
  */
