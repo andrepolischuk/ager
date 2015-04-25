@@ -19,6 +19,7 @@ var today = new Date();
 
 /**
  * Expose age
+ *
  * @param  {Date|Array|Number} year
  * @param  {Number} month
  * @param  {Number} day
@@ -43,6 +44,7 @@ module.exports = function(year, month, day) {
 
 /**
  * Parse date
+ *
  * @param  {Number} year
  * @param  {Number} month
  * @param  {Number} day

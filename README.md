@@ -1,14 +1,8 @@
-# Ager [![Build Status](https://travis-ci.org/andrepolischuk/ager.svg?branch=master)](https://travis-ci.org/andrepolischuk/ager)
+# ager [![Build Status](https://travis-ci.org/andrepolischuk/ager.svg?branch=master)](https://travis-ci.org/andrepolischuk/ager)
 
   Age calculations
 
 ## Instalation
-
-  Browser:
-
-```html
-<script src="https://cdn.rawgit.com/andrepolischuk/ager/1.2.1/ager.min.js"></script>
-```
 
   Component(1):
 
@@ -22,6 +16,12 @@ $ component install andrepolischuk/ager
 $ npm install ager
 ```
 
+  Umd:
+
+```html
+<script src="https://cdn.rawgit.com/andrepolischuk/ager/1.2.1/ager.min.js"></script>
+```
+
 ## API
 
 ### ager(date)
@@ -29,7 +29,7 @@ $ npm install ager
   Calculate age via date
 
 ```js
-ager(new Date());
+ager(new Date(1991, 6, 24));
 ```
 
 ### ager(year, month, day)
