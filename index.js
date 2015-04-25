@@ -29,18 +29,9 @@ var today = new Date();
 module.exports = function(year, month, day) {
   var birthday;
 
-  switch (type(year)) {
-    case 'date':
-      birthday = year;
-      break;
-    case 'array':
-      birthday = parse.apply(null, year);
-      break;
-    case 'number':
-      birthday = parse(year, month, day);
-      break;
-  }
-
+  if (type(year) === 'date') birthday = year;
+  if (type(year) === 'array') birthday = parse.apply(null, year);
+  if (type(year) === 'number') birthday = parse(year, month, day);
   if (!birthday || birthday > today) return;
 
   var age = today.getFullYear() - birthday.getFullYear();
@@ -48,7 +39,6 @@ module.exports = function(year, month, day) {
   age -= today.getMonth() === birthday.getMonth() &&
     today.getDate() < birthday.getDate() ? 1 : 0;
   return age;
-
 };
 
 /**
