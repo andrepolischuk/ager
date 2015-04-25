@@ -19,7 +19,7 @@ $ npm install ager
   Umd:
 
 ```html
-<script src="https://cdn.rawgit.com/andrepolischuk/ager/1.2.1/ager.min.js"></script>
+<script src="https://cdn.rawgit.com/andrepolischuk/ager/1.2.2/ager.js"></script>
 ```
 
 ## API

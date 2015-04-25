@@ -38,15 +38,18 @@
    */
 
   function call(id, require){
-    var m = cache[id] = { exports: {} };
+    var m = { exports: {} };
     var mod = modules[id];
     var name = mod[2];
     var fn = mod[0];
 
     fn.call(m.exports, function(req){
       var dep = modules[id][1][req];
-      return require(dep ? dep : req);
+      return require(dep || req);
     }, m, m.exports, outer, modules, cache, entries);
+
+    // store to cache after successful resolve
+    cache[id] = m;
 
     // expose as `name`.
     if (name) cache[name] = cache[id];
@@ -112,6 +115,7 @@ var today = new Date();
 
 /**
  * Expose age
+ *
  * @param  {Date|Array|Number} year
  * @param  {Number} month
  * @param  {Number} day
@@ -122,18 +126,9 @@ var today = new Date();
 module.exports = function(year, month, day) {
   var birthday;
 
-  switch (type(year)) {
-    case 'date':
-      birthday = year;
-      break;
-    case 'array':
-      birthday = parse.apply(null, year);
-      break;
-    case 'number':
-      birthday = parse(year, month, day);
-      break;
-  }
-
+  if (type(year) === 'date') birthday = year;
+  if (type(year) === 'array') birthday = parse.apply(null, year);
+  if (type(year) === 'number') birthday = parse(year, month, day);
   if (!birthday || birthday > today) return;
 
   var age = today.getFullYear() - birthday.getFullYear();
@@ -141,11 +136,11 @@ module.exports = function(year, month, day) {
   age -= today.getMonth() === birthday.getMonth() &&
     today.getDate() < birthday.getDate() ? 1 : 0;
   return age;
-
 };
 
 /**
  * Parse date
+ *
  * @param  {Number} year
  * @param  {Number} month
  * @param  {Number} day
@@ -199,5 +194,4 @@ module.exports = function(val){
   return typeof val;
 };
 
-}, {}]}, {}, {"1":""})
-);
+}, {}]}, {}, {"1":""}));

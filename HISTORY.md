@@ -1,3 +1,10 @@
+# 1.2.2 / 2015.04.26
+
+  * Add travis
+  * Add npm scripts instead of Makefile
+  * Fix browserify support
+  * Update test, remove dependency on year
+
 # 1.2.1 / 2015.03.19
 
   * Remove dts dependence
