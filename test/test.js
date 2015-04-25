@@ -1,21 +1,19 @@
 
 var ager = require('..');
 var assert = require('assert');
+var year = (new Date()).getFullYear();
 
 describe('ager()', function() {
-
   it('should return undefined for incorrect args', function() {
     assert(ager() === undefined);
     assert(ager(72) === undefined);
     assert(ager('asd') === undefined);
   });
-
 });
 
 describe('ager(date)', function() {
-
   it('should return undefined for future date', function() {
-    assert(ager(new Date(2050, 5, 15)) === undefined);
+    assert(ager(new Date(year + 50, 5, 15)) === undefined);
   });
 
   it('should return number', function() {
@@ -24,15 +22,13 @@ describe('ager(date)', function() {
   });
 
   it('should return 31', function() {
-    assert(ager(new Date(1984, 1, 5)) === 31);
+    assert(ager(new Date(year - 31, 0, 1)) === 31);
   });
-
 });
 
 describe('ager(array)', function() {
-
   it('should return undefined for future date', function() {
-    assert(ager([2050, 6, 15]) === undefined);
+    assert(ager([year + 50, 6, 15]) === undefined);
   });
 
   it('should return undefined for incorrect date', function() {
@@ -46,15 +42,13 @@ describe('ager(array)', function() {
   });
 
   it('should return 31', function() {
-    assert(ager([1984, 2, 5]) === 31);
+    assert(ager([year - 31, 1, 1]) === 31);
   });
-
 });
 
 describe('ager(year, month, day)', function() {
-
   it('should return undefined for future date', function() {
-    assert(ager(2050, 6, 15) === undefined);
+    assert(ager(year + 50, 6, 15) === undefined);
   });
 
   it('should return undefined for incorrect date', function() {
@@ -68,7 +62,6 @@ describe('ager(year, month, day)', function() {
   });
 
   it('should return 31', function() {
-    assert(ager(1984, 2, 5) === 31);
+    assert(ager(year - 31, 1, 1) === 31);
   });
-
 });
