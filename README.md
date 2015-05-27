@@ -6,6 +6,9 @@
 
 ```sh
 $ npm install --save ager
+```
+
+```sh
 $ component install andrepolischuk/ager
 ```
 
