@@ -1,7 +1,7 @@
 
 'use strict';
 
-var ager = require('..');
+var ager = require('./');
 var assert = require('assert');
 var year = (new Date()).getFullYear();
 

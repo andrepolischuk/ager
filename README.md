@@ -2,14 +2,14 @@
 
   > Age calculations
 
-## Instalation
+## Install
 
 ```sh
-$ npm install --save ager
+npm install --save ager
 ```
 
 ```sh
-$ component install andrepolischuk/ager
+component install andrepolischuk/ager
 ```
 
 ## Usage
