@@ -1,6 +1,6 @@
-# ager [![Build Status](https://travis-ci.org/andrepolischuk/ager.svg?branch=master)](https://travis-ci.org/andrepolischuk/ager)
+# ager [![Build Status][travis-image]][travis-url]
 
-  > Age calculations
+> Age calculations
 
 ## Install
 
@@ -16,7 +16,6 @@ component install andrepolischuk/ager
 
 ```js
 var ager = require('ager');
-
 ager(new Date(1991, 3, 24)); // 24
 ager(1991, 4, 24); // 24
 ager([1991, 4, 24]); // 24
@@ -24,4 +23,7 @@ ager([1991, 4, 24]); // 24
 
 ## License
 
-  MIT
+MIT
+
+[travis-url]: https://travis-ci.org/andrepolischuk/ager
+[travis-image]: https://travis-ci.org/andrepolischuk/ager.svg?branch=master
