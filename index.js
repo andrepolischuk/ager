@@ -1,11 +1,5 @@
 'use strict';
-
-try {
-  var type = require('type');
-} catch (err) {
-  var type = require('component-type');
-}
-
+var type = require('component-type');
 var today = new Date();
 
 module.exports = function (year, month, day) {

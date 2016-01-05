@@ -8,10 +8,6 @@
 npm install --save ager
 ```
 
-```sh
-component install andrepolischuk/ager
-```
-
 ## Usage
 
 ```js

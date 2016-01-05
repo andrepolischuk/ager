@@ -13,9 +13,6 @@
   "devDependencies": {
     "mocha": "^2.2.4"
   },
-  "browser": {
-    "type": "component-type"
-  },
   "main": "index.js",
   "scripts": {
     "test": "mocha"
