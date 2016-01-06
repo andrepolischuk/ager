@@ -3,22 +3,22 @@ import ager from './index.es5';
 const year = (new Date()).getFullYear();
 
 test('return undefined for incorrect args', t => {
-  t.is(ager(), undefined);
-  t.is(ager(72), undefined);
-  t.is(ager('asd'), undefined);
+  t.throws(ager.bind(null), 'Value is not a date');
+  t.throws(ager.bind(null, 'asd'), 'Value is not a date');
 });
 
 test('return undefined for incorrect date', t => {
-  t.is(ager([1975, 7, 52]), undefined);
-  t.is(ager([1976, 13, 21]), undefined);
-  t.is(ager(1975, 7, 52), undefined);
-  t.is(ager(1976, 13, 21), undefined);
+  t.throws(ager.bind(null, 72), 'Month value is not correct');
+  t.throws(ager.bind(null, [1976, 13, 21]), 'Month value is not correct');
+  t.throws(ager.bind(null, 1976, 13, 21), 'Month value is not correct');
+  t.throws(ager.bind(null, [1975, 7, 52]), 'Day value is not correct');
+  t.throws(ager.bind(null, 1975, 7, 52), 'Day value is not correct');
 });
 
 test('return undefined for future date', t => {
-  t.is(ager(new Date(year + 50, 5, 15)), undefined);
-  t.is(ager([year + 50, 6, 15]), undefined);
-  t.is(ager(year + 50, 6, 15), undefined);
+  t.throws(ager.bind(null, new Date(year + 50, 5, 15)), 'Date cannot be a birthday');
+  t.throws(ager.bind(null, [year + 50, 6, 15]), 'Date cannot be a birthday');
+  t.throws(ager.bind(null, year + 50, 6, 15), 'Date cannot be a birthday');
 });
 
 test('return number', t => {
