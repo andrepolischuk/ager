@@ -11,10 +11,10 @@ npm install --save ager
 ## Usage
 
 ```js
-var ager = require('ager');
-ager(new Date(1991, 3, 24)); // 24
-ager(1991, 4, 24); // 24
-ager([1991, 4, 24]); // 24
+import age from 'ager';
+age(new Date(1991, 3, 24)); // 24
+age(1991, 4, 24); // 24
+age([1991, 4, 24]); // 24
 ```
 
 ## License
