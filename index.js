@@ -1,7 +1,7 @@
 import type from 'component-type';
 const today = new Date();
 
-export default function (year, month, day) {
+export default function ager(year, month, day) {
   let birthday;
   if (type(year) === 'date') birthday = year;
   if (type(year) === 'array') birthday = parse(...year);
