@@ -17,6 +17,28 @@ age(1991, 4, 24); // 24
 age([1991, 4, 24]); // 24
 ```
 
+## API
+
+### ager(year[, month, day])
+
+#### year
+
+Type: `number`, `date`, `array`
+
+Full year, instance of `Date` or array with date
+
+#### month
+
+Type: `number`
+
+Month in the range `1...12`
+
+#### day
+
+Type: `number`
+
+Day in the range `1...31`
+
 ## License
 
 MIT
