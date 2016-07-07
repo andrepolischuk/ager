@@ -10,21 +10,21 @@ test('return undefined for incorrect args', t => {
 
 test('return undefined for incorrect date', t => {
   t.throws(ager.bind(null, 72), 'Month value is not correct');
-  t.throws(ager.bind(null, [1976, 13, 21]), 'Month value is not correct');
+  t.throws(ager.bind(null, [ 1976, 13, 21 ]), 'Month value is not correct');
   t.throws(ager.bind(null, 1976, 13, 21), 'Month value is not correct');
-  t.throws(ager.bind(null, [1975, 7, 52]), 'Day value is not correct');
+  t.throws(ager.bind(null, [ 1975, 7, 52 ]), 'Day value is not correct');
   t.throws(ager.bind(null, 1975, 7, 52), 'Day value is not correct');
 });
 
 test('return undefined for future date', t => {
   t.throws(ager.bind(null, new Date(year + 50, 5, 15)), 'Date cannot be a birthday');
-  t.throws(ager.bind(null, [year + 50, 6, 15]), 'Date cannot be a birthday');
+  t.throws(ager.bind(null, [ year + 50, 6, 15 ]), 'Date cannot be a birthday');
   t.throws(ager.bind(null, year + 50, 6, 15), 'Date cannot be a birthday');
 });
 
 test('return number', t => {
   const ageFromDate = ager(new Date(1980, 7, 11));
-  const ageFromArray = ager([1980, 8, 11]);
+  const ageFromArray = ager([ 1980, 8, 11 ]);
   const ageFromArgs = ager(1980, 8, 11);
   t.is(typeof ageFromDate, 'number');
   t.is(typeof ageFromArray, 'number');
@@ -36,6 +36,6 @@ test('return number', t => {
 
 test('return 31', t => {
   t.is(ager(new Date(year - 31, 0, 1)), 31);
-  t.is(ager([year - 31, 1, 1]), 31);
+  t.is(ager([ year - 31, 1, 1 ]), 31);
   t.is(ager(year - 31, 1, 1), 31);
 });
