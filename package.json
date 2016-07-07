@@ -1,6 +1,6 @@
 {
   "name": "ager",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "Age calculations",
   "main": "index.es5.js",
   "jsnext:main": "index.js",
