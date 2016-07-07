@@ -1,12 +1,32 @@
 {
   "name": "ager",
-  "description": "Age calculations",
   "version": "2.0.2",
+  "description": "Age calculations",
+  "main": "index.es5.js",
+  "jsnext:main": "index.js",
+  "files": [
+    "index.js",
+    "index.es5.js"
+  ],
+  "scripts": {
+    "test": "ava --require babel-register",
+    "prepublish": "babel index.js --out-file index.es5.js",
+    "postpublish": "rimraf index.es5.js && git push --follow-tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrepolischuk/ager.git"
+  },
   "keywords": [
     "date",
     "age"
   ],
-  "repository": "andrepolischuk/ager",
+  "author": "Andrey Polischuk <andre.polischuk@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andrepolischuk/ager/issues"
+  },
+  "homepage": "https://github.com/andrepolischuk/ager",
   "dependencies": {
     "component-type": "^1.2.1"
   },
@@ -17,13 +37,5 @@
     "babel-preset-es2015": "^6.9.0",
     "babel-register": "^6.9.0",
     "rimraf": "^2.5.3"
-  },
-  "main": "index.es5.js",
-  "scripts": {
-    "test": "ava --require babel-register",
-    "prepublish": "babel index.js --out-file index.es5.js",
-    "postpublish": "rimraf index.es5.js && git push --follow-tags"
-  },
-  "author": "Andrey Polischuk <andre.polischuk@gmail.com>",
-  "license": "MIT"
+  }
 }
