@@ -1,6 +1,7 @@
 import test from 'ava';
-import ager from './index.es5';
-const year = (new Date()).getFullYear();
+import ager from './index';
+
+const year = new Date().getFullYear();
 
 test('return undefined for incorrect args', t => {
   t.throws(ager.bind(null), 'Value is not a date');
